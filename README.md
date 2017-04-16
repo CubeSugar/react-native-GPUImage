@@ -1,15 +1,38 @@
 # [WIP] react-native-GPUImage
 GPUImage Component for React Native
 
-inspired from [GPUImage](https://github.com/BradLarson/GPUImage) and [GPUImage for Android](https://github.com/CyberAgent/android-gpuimage)
+Inspired by [GPUImage](https://github.com/BradLarson/GPUImage) and [GPUImage for Android](https://github.com/CyberAgent/android-gpuimage)
 
 ## DEPENDENCIES
 
 - React-Native > 0.42
 - gl-react
+- gl-react-image
 - gl-react-native
 
 ## USAGE
+
+## NOTE
+
+- vertex shader support for Android
+
+```
+// gl-react-native proj
+// android/src/main/java/com/projectseptember/RNGL/RNGLContext.java
+public void addShader (final Integer id, final ReadableMap config, final Callback onCompile) {
+    final String frag = config.getString("frag");
+    final String name = config.getString("name");
+    //shaders.put(id, new GLShaderData(name, STATIC_VERT, frag));
+    String vert = STATIC_VERT;
+    if (config.hasKey("vert")) {
+        vert = config.getString("vert");
+    }
+    shaders.put(id, new GLShaderData(name, vert, frag));
+    if (onCompile != null) {
+        onCompileCallbacks.put(id, onCompile);
+    }
+}
+```
 
 
 ## PROGRESS
