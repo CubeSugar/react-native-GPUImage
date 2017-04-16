@@ -14,107 +14,107 @@ inspired from [GPUImage](https://github.com/BradLarson/GPUImage) and [GPUImage f
 
 ## PROGRESS
 
-### GPUImage
-- [x] GLProgram.js
-- [x] GPUImage.js
-- [x] GPUImageFramebuffer
-- [x] GPUImageFramebufferCache
-
-#### Sources
-- [x] GPUImageOutput
-- [x] GPUImageVideoCamera
-- [x] GPUImageStillCamera
-- [x] GPUImageMovie
-- [x] GPUImageMovieComposition
-- [x] GPUImageTextureInput
-- [x] GPUImageTexutreOutput
-- [x] GPUImageRawDataInput
-- [x] GPUImageRawDataOutput
-- [x] GPUImageUIElement
-- [x] GPUImageColorConversion
-
-#### Pipeline
-- [x] GPUImageFilterPipeline
-
 #### Filters
-- [Y] GPUImageFilter
-- [x] GPUImageFilterGroup
+- [x] GPUImageFilter
+- [ ] GPUImageFilterGroup
 - [ ] GPUImageTwoPassFilter
 - [ ] GPUImageTwoPassTextureSamplingFilter
-- [Y] GPUImageTwoInputFilter
+- [x] GPUImageTwoInputFilter
 - [ ] GPUImageThreeInputFilter
 - [ ] GPUImageFourInputFilter
 - [ ] GPUImageTwoInputCrossTextureSamplingFilter
-- [Y] GPUImage3x3TextureSamplingFilter
-- [x] GPUImageBuffer
+- [x] GPUImage3x3TextureSamplingFilter
+- [ ] GPUImageBuffer
 
-##### Color processing
-- [Y] GPUImageBrightnessFilter
+#### Color processing
+- [x] GPUImageBrightnessFilter
 - [ ] GPUImageLevelsFilter
 - [ ] GPUImageExposureFilter
-- [Y] GPUImageContrastFilter
-- [Y] GPUImageSaturationFilter
-- [Y] GPUImageGammaFilter
-- [Y] GPUImageColorMatrixFilter
-- [Y] GPUImageRGBFilter
+- [x] GPUImageContrastFilter
+- [x] GPUImageSaturationFilter
+- [x] GPUImageGammaFilter
+- [x] GPUImageColorMatrixFilter
+- [x] GPUImageRGBFilter
 - [ ] GPUImageHSBFilter
 - [ ] GPUImageHueFilter
-- [Y] GPUImageColorInvertFilter
-- [Y] GPUImageGrayscaleFilter
-- [Y] GPUImageLuminanceThresholdFilter
+- [x] GPUImageColorInvertFilter
+- [x] GPUImageGrayscaleFilter
+- [x] GPUImageLuminanceThresholdFilter
 
-##### Image processing
-- [Y] GPUImage3x3ConvolutionFilter
-- [Y] GPUImageLocalBinaryPatternFilter
-- [Y] GPUImageColorLocalBinaryPatternFilter
-- [Y] GPUImageSobelEdgeDetectionFilter
-- [Y] GPUImageThresholdEdgeDetectionFilter
-- [Y] GPUImageDirectionalSobelEdgeDetectionFilter
-- [Y] GPUImageDirectionalNonMaximumSuppressionFilter
-- [Y] GPUImageWeakPixelInclusionFilter
-- [Y] GPUImageCannyEdgeDetectionFilter
+#### Image processing
+- [x] GPUImage3x3ConvolutionFilter
+- [x] GPUImageLocalBinaryPatternFilter
+- [x] GPUImageColorLocalBinaryPatternFilter
+- [x] GPUImageSobelEdgeDetectionFilter
+- [x] GPUImageThresholdEdgeDetectionFilter
+- [x] GPUImageDirectionalSobelEdgeDetectionFilter
+- [x] GPUImageDirectionalNonMaximumSuppressionFilter
+- [x] GPUImageWeakPixelInclusionFilter
+- [x] GPUImageCannyEdgeDetectionFilter
 
-##### Blends
-- [Y] GPUImageSourceOverBlendFilter
-- [Y] GPUImageColorBurnBlendFilter
-- [Y] GPUImageColorDodgeBlendFilter
-- [Y] GPUImageDarkenBlendFilter
-- [Y] GPUImageDifferenceBlendFilter
-- [Y] GPUImageDissolveBlendFilter
-- [Y] GPUImageExclusionBlendFilter
-- [Y] GPUImageHardLightBlendFilter
-- [Y] GPUImageSoftLightBlendFilter
-- [Y] GPUImageLightenBlendFilter
-- [Y] GPUImageAddBlendFilter
-- [Y] GPUImageSubstractBlendFilter
-- [Y] GPUImageDivideBlendFilter
-- [Y] GPUImageMultiplyBlendFilter
-- [Y] GPUImageOverlayBlendFilter
-- [Y] GPUImageScreenBlendFilter
-- [Y] GPUImageChromaKeyBlendFilter
-- [Y] GPUImageAlphaBlendFilter
-- [Y] GPUImageNormalBlendFilter
-- [Y] GPUImageColorBlendFilter
-- [Y] GPUImageHueBlendFilter
-- [Y] GPUImageSaturationBlendFilter
-- [Y] GPUImageLuminosityBlendFilter
-- [Y] GPUImageLinearBurnBlendFilter
-- [Y] GPUImageMaskFilter
+#### Blends
+- [x] GPUImageSourceOverBlendFilter
+- [x] GPUImageColorBurnBlendFilter
+- [x] GPUImageColorDodgeBlendFilter
+- [x] GPUImageDarkenBlendFilter
+- [x] GPUImageDifferenceBlendFilter
+- [x] GPUImageDissolveBlendFilter
+- [x] GPUImageExclusionBlendFilter
+- [x] GPUImageHardLightBlendFilter
+- [x] GPUImageSoftLightBlendFilter
+- [x] GPUImageLightenBlendFilter
+- [x] GPUImageAddBlendFilter
+- [x] GPUImageSubstractBlendFilter
+- [x] GPUImageDivideBlendFilter
+- [x] GPUImageMultiplyBlendFilter
+- [x] GPUImageOverlayBlendFilter
+- [x] GPUImageScreenBlendFilter
+- [x] GPUImageChromaKeyBlendFilter
+- [x] GPUImageAlphaBlendFilter
+- [x] GPUImageNormalBlendFilter
+- [x] GPUImageColorBlendFilter
+- [x] GPUImageHueBlendFilter
+- [x] GPUImageSaturationBlendFilter
+- [x] GPUImageLuminosityBlendFilter
+- [x] GPUImageLinearBurnBlendFilter
+- [x] GPUImageMaskFilter
 
-##### Effects
-- [Y] GPUImagePixellateFilter
-- [Y] GPUImagePolarPixellateFilter
-- [Y] GPUImagePixellatePositionFilter
-- [Y] GPUImagePolkaDotFilter
-- [Y] GPUImageHalftoneFilter
-- [Y] GPUImageCrosshatchFilter
-- [Y] GPUImageSketchFilter
-- [Y] GPUImageThresholdSketchFilter
-- [Y] GPUImageEmbossFilter
-- [Y] GPUImageToonFilter
-- [Y] GPUImageVignetteFilter
+#### Effects
+- [x] GPUImagePixellateFilter
+- [x] GPUImagePolarPixellateFilter
+- [x] GPUImagePixellatePositionFilter
+- [x] GPUImagePolkaDotFilter
+- [x] GPUImageHalftoneFilter
+- [x] GPUImageCrosshatchFilter
+- [x] GPUImageSketchFilter
+- [x] GPUImageThresholdSketchFilter
+- [x] GPUImageEmbossFilter
+- [x] GPUImageToonFilter
+- [x] GPUImageVignetteFilter
 
-##### Other
+#### GPUImage
+- [ ] GLProgram.js
+- [ ] GPUImage.js
+- [ ] GPUImageFramebuffer
+- [ ] GPUImageFramebufferCache
+
+#### Sources
+- [ ] GPUImageOutput
+- [ ] GPUImageVideoCamera
+- [ ] GPUImageStillCamera
+- [ ] GPUImageMovie
+- [ ] GPUImageMovieComposition
+- [ ] GPUImageTextureInput
+- [ ] GPUImageTexutreOutput
+- [ ] GPUImageRawDataInput
+- [ ] GPUImageRawDataOutput
+- [ ] GPUImageUIElement
+- [ ] GPUImageColorConversion
+
+#### Pipeline
+- [ ] GPUImageFilterPipeline
+
+#### Others
 - [ ] GPUImageAdaptiveThresholdFilter
 - [ ] GPUImageAmatorkaFilter
 - [ ] GPUImageAverageColor
@@ -179,7 +179,7 @@ inspired from [GPUImage](https://github.com/BradLarson/GPUImage) and [GPUImage f
 - [ ] GPUImageSepiaFilter
 - [ ] GPUImageSharpenFilter
 - [ ] GPUImageShiTomasiFeatureDetectionFilter
-- [-] GPUImageSingleComponentGaussianBlurFilter
+- [ ] GPUImageSingleComponentGaussianBlurFilter
 - [ ] GPUImageSkinToneFilter
 - [ ] GPUImageSoftEleganceFilter
 - [ ] GPUImageSolarizeFilter
