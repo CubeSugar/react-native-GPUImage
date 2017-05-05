@@ -121,6 +121,7 @@ export {
     GPUImageToonFilter,
     GPUImageVignetteFilter,
 
+    GPUImage3x3ConvolutionFilter,
     GPUImageSobelEdgeDetectionFilter,
     GPUImageThresholdEdgeDetectionFilter,
     GPUImageSingleComponentGaussianBlurFilter,
