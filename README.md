@@ -23,7 +23,7 @@ Inspired by [GPUImage](https://github.com/BradLarson/GPUImage) and [GPUImage for
 
 1. `npm i gl-react --save`
 2. `npm i gl-react-native --save`
-3. `npm i gl-react-image --save` [optional, but recommanded]
+3. `npm i gl-react-image --save` [optional, but recommended]
 4. `npm i wj-react-native-gpuimage --save`
 5. edit file *android/src/main/java/com/projectseptember/RNGL/RNGLContext.java* in *node_module/gl-react-native/* as showed in [NOTE](#user-content-note) part
 
@@ -58,20 +58,22 @@ import * as GPUImage from "wj-react-native-gpuimage";
 ...
 render() {
     return (
-        <GPUImage.GPUImageFilter
-             frag={`
+        <Surface width={300} height={300}>
+            <GPUImage.GPUImageFilter
+                 frag={`
 precision highp float;
 varying vec2 v_texCoord;
 uniform float u_red;
 void main() {
     gl_FragColor = vec4(u_red, v_texCoord.x, v_texCoord.y, 1.0);
 }
-             `}
-             uniforms={{
-                 u_red: 0.5,
-             }}
-        >
-        </GPUImage.GPUImageFilter>
+                 `}
+                 uniforms={{
+                     u_red: 0.5,
+                 }}
+            >
+            </GPUImage.GPUImageFilter>
+        </Surface>
     );
 }
 ...
