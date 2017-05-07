@@ -1,6 +1,6 @@
 {
   "name": "wj-react-native-gpuimage",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "gpuimage component for react-native in javascript",
   "main": "index.js",
   "scripts": {

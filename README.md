@@ -1,19 +1,112 @@
 # [WIP] react-native-GPUImage
+
+![](https://img.shields.io/badge/license-MIT-000000.svg)
+[![npm](https://img.shields.io/npm/dm/wj-react-native-gpuimage.svg)](https://www.npmjs.com/package/wj-react-native-gpuimage)
+[![npm](https://img.shields.io/npm/v/wj-react-native-gpuimage.svg)](https://www.npmjs.com/package/wj-react-native-gpuimage)
+![](https://img.shields.io/badge/platform-react--native-brightgreen.svg)
+
 GPUImage Component for React Native
 
 Inspired by [GPUImage](https://github.com/BradLarson/GPUImage) and [GPUImage for Android](https://github.com/CyberAgent/android-gpuimage)
 
+[SHOWCASE](#user-content-showcase)
+
 ## DEPENDENCIES
 
-- React-Native > 0.42
+- React-Native > 0.40
 - gl-react
-- gl-react-image
 - gl-react-native
 
-## USAGE
+## DOC 
+
+### INSTALL
+
+1. `npm i gl-react --save`
+2. `npm i gl-react-native --save`
+3. `npm i gl-react-image --save` [optional, but recommanded]
+4. `npm i wj-react-native-gpuimage --save`
+5. edit file *android/src/main/java/com/projectseptember/RNGL/RNGLContext.java* in *node_module/gl-react-native/* as showed in [NOTE](#user-content-note) part
+
+### USAGE
+
+* BASIC
+
+```
+import * as GPUImage from "wj-react-native-gpuimage";
+
+...
+
+render() {
+    return (
+        <Surface width={300} height={300}>
+             <GPUImage.GPUImageColorInvertFilter>
+                 <GLImage
+                     source={{url: "https://avatars3.githubusercontent.com/u/3667305?v=3&s=460", width: 300, height: 300}}
+                     resizeMode="stretch"
+                 />
+             </GPUImage.GPUImageColorInvertFilter>
+        </Surface>
+    );
+}
+...
+```
+
+* CUSTOM SHADER
+
+```
+import * as GPUImage from "wj-react-native-gpuimage";
+...
+render() {
+    return (
+        <GPUImage.GPUImageFilter
+             frag={`
+precision highp float;
+varying vec2 v_texCoord;
+uniform float u_red;
+void main() {
+    gl_FragColor = vec4(u_red, v_texCoord.x, v_texCoord.y, 1.0);
+}
+             `}
+             uniforms={{
+                 u_red: 0.5,
+             }}
+        >
+        </GPUImage.GPUImageFilter>
+    );
+}
+...
+```
+
+* GROUP
+
+```
+import * as GPUImage from "wj-react-native-gpuimage";
+...
+render() {
+    return (
+        <Surface width={300} height={300}>
+             <GPUImage.GPUImageColorInvertFilter>
+                 <GPUImage.GPUImageHalftoneFilter fractionalWidthOfPixel={0.2}>
+                     <GLImage
+                         source={{url: "https://avatars3.githubusercontent.com/u/3667305?v=3&s=460", width: 300, height: 300}}
+                         resizeMode="stretch"
+                     />
+                 </GPUImage.GPUImageHalftoneFilter>
+             </GPUImage.GPUImageColorInvertFilter>
+        </Surface>
+    );
+}
+...
+```
+
+Check [example](https://github.com/CubeSugar/react-native-GPUImage/tree/master/example) for more details.
+
+1. `cd example`
+2. `npm install`
+3. edit *RNGLContext.java*
+4. `react-native run-android` or `react-native run-ios`
 
 ## NOTE
-
 - vertex shader support for Android
 
 ```
@@ -34,20 +127,20 @@ public void addShader (final Integer id, final ReadableMap config, final Callbac
 }
 ```
 
+## SHOWCASE
+
+![PixelateEffect](https://github.com/CubeSugar/react-native-GPUImage/tree/master/example/showcase/pixelate.png)
+![HalftoonEffect](https://github.com/CubeSugar/react-native-GPUImage/tree/master/example/showcase/halftoon.png)
+![PolkaDotEffect](https://github.com/CubeSugar/react-native-GPUImage/tree/master/example/showcase/polkadot.png)
+![VignetteEffect](https://github.com/CubeSugar/react-native-GPUImage/tree/master/example/showcase/vignette.png)
+![CannyEdgeDetect](https://github.com/CubeSugar/react-native-GPUImage/tree/master/example/showcase/cannyedgedetection.png)
 
 ## PROGRESS
 
 #### Filters
 - [x] GPUImageFilter
-- [ ] GPUImageFilterGroup
-- [ ] GPUImageTwoPassFilter
-- [ ] GPUImageTwoPassTextureSamplingFilter
 - [x] GPUImageTwoInputFilter
-- [ ] GPUImageThreeInputFilter
-- [ ] GPUImageFourInputFilter
-- [ ] GPUImageTwoInputCrossTextureSamplingFilter
 - [x] GPUImage3x3TextureSamplingFilter
-- [ ] GPUImageBuffer
 
 #### Color processing
 - [x] GPUImageBrightnessFilter
@@ -114,112 +207,3 @@ public void addShader (final Integer id, final ReadableMap config, final Callbac
 - [x] GPUImageEmbossFilter
 - [x] GPUImageToonFilter
 - [x] GPUImageVignetteFilter
-
-#### GPUImage
-- [ ] GLProgram.js
-- [ ] GPUImage.js
-- [ ] GPUImageFramebuffer
-- [ ] GPUImageFramebufferCache
-
-#### Sources
-- [ ] GPUImageOutput
-- [ ] GPUImageVideoCamera
-- [ ] GPUImageStillCamera
-- [ ] GPUImageMovie
-- [ ] GPUImageMovieComposition
-- [ ] GPUImageTextureInput
-- [ ] GPUImageTexutreOutput
-- [ ] GPUImageRawDataInput
-- [ ] GPUImageRawDataOutput
-- [ ] GPUImageUIElement
-- [ ] GPUImageColorConversion
-
-#### Pipeline
-- [ ] GPUImageFilterPipeline
-
-#### Others
-- [ ] GPUImageAdaptiveThresholdFilter
-- [ ] GPUImageAmatorkaFilter
-- [ ] GPUImageAverageColor
-- [ ] GPUImageAverageLuminanceThresholdFilter
-- [ ] GPUImageBilateralFilter
-- [ ] GPUImageBoxBlurFilter
-- [ ] GPUImageBulgeDistortionFilter
-- [ ] GPUImageCGAColorspaceFilter
-- [ ] GPUImageChromaKeyFilter
-- [ ] GPUImageClosingFilter
-- [ ] GPUImageColorPackingFilter
-- [ ] GPUImageColorFASTFeatureDetector
-- [ ] GPUImageCropFilter
-- [ ] GPUImageCrosshairGenerator
-- [ ] GPUImageDilationFilter
-- [ ] GPUImageErosionFilter
-- [ ] GPUImageFASTCornerDectionFilter
-- [ ] GPUImageFalseColorFilter
-- [ ] GPUImageGaussianBlurFilter
-- [ ] GPUImageGaussianBlurPositionFilter
-- [ ] GPUImageGaussianSelectiveBlurFilter
-- [ ] GPUImageGlassSphereFilter
-- [ ] GPUImageHarrisCornerDetectionFilter
-- [ ] GPUIMageHazeFilter
-- [ ] GPUImageHighPassFilter
-- [ ] GPUImageHighlightShadowFilter
-- [ ] GPUImageHighlightShadowTintFilter
-- [ ] GPUImageHistogramEqualizationFIlter
-- [ ] GPUImageHistogramFilter
-- [ ] GPUImageHistogramGenerator
-- [ ] GPUImageHoughTransformLineDetector
-- [ ] GPUImageJFAVoronoiFilter
-- [ ] GPUImageKuwaharaFilter
-- [ ] GPUImageKuwaharaRadius3Filter
-- [ ] GPUImageLanczosResamplingFilter
-- [ ] GPUImageLaplacianFilter
-- [ ] GPUImageLineGenerator
-- [ ] GPUImageLookupFilter
-- [ ] GPUImageLowPassFilter
-- [ ] GPUImageLuminanceRangeFilter
-- [ ] GPUImageLuminosity
-- [ ] GPUImageMedianFilter
-- [ ] GPUImageMissEtikateFilter
-- [ ] GPUImageMonochromeFilter
-- [ ] GPUImageMosaicFilter
-- [ ] GPUImageMotionBlurFilter
-- [ ] GPUImageMotionDetector
-- [ ] GPUImageNobleCornerDetectionFilter
-- [ ] GPUImageNonMaximumSuppressionFilter
-- [ ] GPUImageOpacityFilter
-- [ ] GPUImageOpeningFilter
-- [ ] GPUImageParallelCoordinateLineTransformFilter
-- [ ] GPUImagePerlinNoiseFilter
-- [ ] GPUImagePinchDistortionFilter
-- [ ] GPUImagePoissonBlendFilter
-- [ ] GPUImagePosterizeFilter
-- [ ] GPUImagePrewittEdgeDetectionFilter
-- [ ] GPUImageRGBClosingFilter
-- [ ] GPUImageRGBDilationFilter
-- [ ] GPUImageRGBErosionFilter
-- [ ] GPUImageRGBOpeningFilter
-- [ ] GPUImageSepiaFilter
-- [ ] GPUImageSharpenFilter
-- [ ] GPUImageShiTomasiFeatureDetectionFilter
-- [ ] GPUImageSingleComponentGaussianBlurFilter
-- [ ] GPUImageSkinToneFilter
-- [ ] GPUImageSoftEleganceFilter
-- [ ] GPUImageSolarizeFilter
-- [ ] GPUImageSolidColorGenerator
-- [ ] GPUImageSphereRefractionFilter
-- [ ] GPUImageStretchDistortionFilter
-- [ ] GPUImageSwirlFilter
-- [ ] GPUImageThresholdNonMaximumSuppressionFilter
-- [ ] GPUImageTiltShiftFilter
-- [ ] GPUImageToneCurveFilter
-- [ ] GPUImageTransformFilter
-- [ ] GPUImageUnsharpMaskFilter
-- [ ] GPUImageVibranceFilter
-- [ ] GPUImageVoronoiConsumerFilter
-- [ ] GPUImageWhiteBalanceFilter
-- [ ] GPUImageXYDerivativeFilter
-- [ ] GPUImageZoomBlurFilter
-- [ ] GPUImageiOSBlurFilter
-
-
