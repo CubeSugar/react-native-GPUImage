@@ -129,11 +129,11 @@ public void addShader (final Integer id, final ReadableMap config, final Callbac
 
 ## SHOWCASE
 
-![PixelateEffect](https://github.com/CubeSugar/react-native-GPUImage/tree/master/example/showcase/pixelate.png)
-![HalftoonEffect](https://github.com/CubeSugar/react-native-GPUImage/tree/master/example/showcase/halftoon.png)
-![PolkaDotEffect](https://github.com/CubeSugar/react-native-GPUImage/tree/master/example/showcase/polkadot.png)
-![VignetteEffect](https://github.com/CubeSugar/react-native-GPUImage/tree/master/example/showcase/vignette.png)
-![CannyEdgeDetect](https://github.com/CubeSugar/react-native-GPUImage/tree/master/example/showcase/cannyedgedetection.png)
+![PixelateEffect](https://github.com/CubeSugar/react-native-GPUImage/tree/master/example/showcase/pixelate.png?raw=true)
+![HalftoonEffect](https://github.com/CubeSugar/react-native-GPUImage/tree/master/example/showcase/halftoon.png?raw=true)
+![PolkaDotEffect](https://github.com/CubeSugar/react-native-GPUImage/tree/master/example/showcase/polkadot.png?raw=true)
+![VignetteEffect](https://github.com/CubeSugar/react-native-GPUImage/tree/master/example/showcase/vignette.png?raw=true)
+![CannyEdgeDetect](https://github.com/CubeSugar/react-native-GPUImage/tree/master/example/showcase/cannyedgedetection.png?raw=true)
 
 ## PROGRESS
 
